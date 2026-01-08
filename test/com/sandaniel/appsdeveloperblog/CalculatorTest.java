@@ -16,7 +16,7 @@ class CalculatorTest {
 	}
 	
 	@Test
-	void divisionTest() {
+	void testIntegerDivicison_WhenFourIsDividedTwo_ShouldReturnTwo() {
 		//Arrange
 		
 		int x = 4;
@@ -33,11 +33,11 @@ class CalculatorTest {
 	}
 	
 	@Test
-	void subtractionTest() {
+	void testIntegerSubtraction_WhenTenIsSubctratedForTwo_ShouldReturnEigth() {
 		//Arrange
 		
 		int x = 10;
-		int y = 5;
+		int y = 2;
 		int expectedResult = 8;
 		
 		//Act
