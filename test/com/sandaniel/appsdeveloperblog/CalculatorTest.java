@@ -17,23 +17,35 @@ class CalculatorTest {
 	
 	@Test
 	void divisionTest() {
-	
+		//Arrange
+		
+		int x = 4;
+		int y = 2;
+		int expectedResult = 2;
+		
 		//Act
 		
-		int result = calculator.integerDivision(4, 2);
+		int result = calculator.integerDivision(x, y);
 		
 		//Assert
-		assertEquals(2, result," The result of 4/2 must be 2, and it is not!");	
+		assertEquals(expectedResult, result,
+				()->"The result of "+x+"/"+y+" must be "+expectedResult+", and it is not!");	
 	}
 	
 	@Test
 	void subtractionTest() {
+		//Arrange
+		
+		int x = 10;
+		int y = 5;
+		int expectedResult = 8;
 		
 		//Act
-		int result = calculator.integerSubtraction(10, 2);
+		int result = calculator.integerSubtraction(x, y);
 		
 		//Assert
-		assertEquals(8, result, "The result of 10-2 must be 5, and it is not!");
+		assertEquals(expectedResult, result,
+				()->"The result of "+x+"-"+y+" must be "+expectedResult+", and it is not!");
 	}
 
 }
