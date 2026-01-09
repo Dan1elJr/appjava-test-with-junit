@@ -1,10 +1,12 @@
 package com.sandaniel.appsdeveloperblog;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Test Math operations in calculator class")
 class CalculatorTest {
 
 	Calculator calculator;
@@ -15,8 +17,9 @@ class CalculatorTest {
 		calculator = new Calculator();
 	}
 	
+	@DisplayName("Test 4/2=2")
 	@Test
-	void testIntegerDivicison_WhenFourIsDividedTwo_ShouldReturnTwo() {
+	void testIntegerDivision_WhenFourIsDividedTwo_ShouldReturnTwo() {
 		//Arrange
 		
 		int x = 4;
@@ -32,6 +35,7 @@ class CalculatorTest {
 				()->"The result of "+x+"/"+y+" must be "+expectedResult+", and it is not!");	
 	}
 	
+	@DisplayName("Test 10-2=8")
 	@Test
 	void testIntegerSubtraction_WhenTenIsSubctratedForTwo_ShouldReturnEigth() {
 		//Arrange
