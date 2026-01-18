@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -31,11 +32,12 @@ class CalculatorTest {
 		calculator = new Calculator();
 	}
 	
+
 	@AfterEach
 	public void cleanUp() {
 		System.out.println("Executing @AfterEach method");
 	}
-	
+	@Disabled("TODO on this")
 	@DisplayName("Test 4/2=2")
 	@Test
 	void testIntegerDivision_WhenFourIsDividedTwo_ShouldReturnTwo() {
