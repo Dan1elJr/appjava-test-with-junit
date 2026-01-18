@@ -2,6 +2,9 @@ package com.sandaniel.appsdeveloperblog;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,10 +14,26 @@ class CalculatorTest {
 
 	Calculator calculator;
 	
+	//LifeCycle annotations
+	@BeforeAll
+	static void setup() {
+		System.out.println("Executing @BeforeAll method");
+	}
+	
+	@AfterAll
+	static void cleanup() {
+		System.out.println("Executing @AfterAll method");
+	}
+	
 	@BeforeEach
 	public void setUp() {
-		
+		System.out.println("Executing @BeforeEach method");
 		calculator = new Calculator();
+	}
+	
+	@AfterEach
+	public void cleanUp() {
+		System.out.println("Executing @AfterEach method");
 	}
 	
 	@DisplayName("Test 4/2=2")
