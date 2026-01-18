@@ -27,16 +27,18 @@ class CalculatorTest {
 	}
 	
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		System.out.println("Executing @BeforeEach method");
 		calculator = new Calculator();
 	}
 	
 
 	@AfterEach
-	public void cleanUp() {
+	void cleanUp() {
 		System.out.println("Executing @AfterEach method");
 	}
+	
+	
 	@Disabled("TODO on this")
 	@DisplayName("Test 4/2=2")
 	@Test
