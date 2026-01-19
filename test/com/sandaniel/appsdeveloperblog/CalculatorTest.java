@@ -63,7 +63,7 @@ class CalculatorTest {
 		
 		int x = 4;
 		int y = 0;
-		ArithmeticException  expectedExceptionMessage = new ArithmeticException() ;
+		String  expectedExceptionMessage = "/ by zero";
 		
 		//Act & Assert
 		
@@ -77,7 +77,7 @@ class CalculatorTest {
 		
 		//Act
 		
-		assertEquals(expectedExceptionMessage.getClass(),actualException.getClass(), ()->"Should throw an arithmetic exception");
+		assertEquals(expectedExceptionMessage,actualException.getMessage(), ()->"Should throw an arithmetic exception");
 			
 		
 		
