@@ -106,7 +106,7 @@ class CalculatorTest {
 		
 		//Arrange
 		double x = -10;
-		IllegalArgumentException expectedResult = new IllegalArgumentException();
+		String expectedResult = "Cannot calculate square root of a negative number";
 		
 		//Act & Assert
 		
@@ -118,7 +118,7 @@ class CalculatorTest {
 		//Assert
 		
 		
-		assertEquals(expectedResult.getClass(), actualResult.getClass(),()->"Should throw an IllegalArgumentException");
+		assertEquals(expectedResult, actualResult.getMessage(),()->"Should throw an IllegalArgumentException");
 		
 		
 	}
