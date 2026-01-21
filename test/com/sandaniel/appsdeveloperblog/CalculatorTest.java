@@ -3,12 +3,17 @@ package com.sandaniel.appsdeveloperblog;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.stream.Stream;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 @DisplayName("Test Math operations in calculator class")
 class CalculatorTest {
@@ -83,14 +88,10 @@ class CalculatorTest {
 		
 	}
 	
-	@DisplayName("Test 10-2=8")
-	@Test
-	void testIntegerSubtraction_WhenTenIsSubctratedForTwo_ShouldReturnEigth() {
-		//Arrange
-		
-		int x = 10;
-		int y = 2;
-		int expectedResult = 8;
+	@DisplayName("Test integer subtraction [x,y,expectedResult]")
+	@ParameterizedTest
+	@MethodSource("integerSubtratcionInputParameters")
+	void testIntegerSubtraction_WhenTenIsSubctratedForTwo_ShouldReturnEigth(int x, int y, int expectedResult) {
 		
 		//Act
 		int result = calculator.integerSubtraction(x, y);
@@ -122,6 +123,17 @@ class CalculatorTest {
 		
 		
 	}
+	
+	public static Stream<Arguments> integerSubtratcionInputParameters(){
+		return Stream.of(
+				Arguments.of(10,2,8),
+				Arguments.of(33,1,32),
+				Arguments.of(10,1,9),
+				Arguments.of(20,2,18)
+				);
+	}
+	
+	
 	
 	
 
