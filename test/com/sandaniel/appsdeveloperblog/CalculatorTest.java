@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 @DisplayName("Test Math operations in calculator class")
 class CalculatorTest {
@@ -88,9 +88,7 @@ class CalculatorTest {
 	@DisplayName("Test integer subtraction [x,y,expectedResult]")
 	@ParameterizedTest
 	//@MethodSource("integerSubtratcionInputParameters")
-	@CsvSource({"33,2,31",
-				"20,2,18",
-				"19,5,14"})
+	@CsvFileSource(resources="/integerSubtraction.csv")
 	void testIntegerSubtraction_WhenTenIsSubctratedForTwo_ShouldReturnEigth(int x, int y, int expectedResult) {
 		
 		//Act
