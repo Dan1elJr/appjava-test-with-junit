@@ -1,5 +1,6 @@
 package com.sandaniel.appsdeveloperblog;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -11,6 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("Test Math operations in calculator class")
 class CalculatorTest {
@@ -84,6 +86,16 @@ class CalculatorTest {
 		
 		
 	}
+	
+	// Method with @ValueSource
+	
+	@ParameterizedTest
+	@ValueSource(strings= {"Daniel","Carl","Sarah"})
+	void valueSourceDemonstration(String firstName) {
+		System.out.println(firstName);
+		assertNotNull(firstName);
+	}
+	
 	
 	@DisplayName("Test integer subtraction [x,y,expectedResult]")
 	@ParameterizedTest
